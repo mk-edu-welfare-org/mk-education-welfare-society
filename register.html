@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Mustafa Kamaal Welfare Society</title>
+
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Header -->
+  <div id="header"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
+        const toggleButton = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (toggleButton && mobileMenu) {
+          toggleButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+          });
+        }
+      });
+  </script>
+
+<!-- Lottie CDN -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<!-- Animated Lottie Banner Section -->
+<section class="relative bg-gradient-to-r from-blue-100 to-green-100 py-16 px-4 sm:px-8">
+  <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+    
+    <!-- Left: Animated Lottie Illustration -->
+    <div class="flex justify-center" data-aos="fade-right">
+      <lottie-player 
+        src="https://assets1.lottiefiles.com/packages/lf20_jcikwtux.json" 
+        background="transparent" 
+        speed="1"  
+        style="width: 300px; height: 300px;"  
+        loop autoplay>
+      </lottie-player>
+    </div>
+    
+    <!-- Right: Registration Message -->
+    <div class="text-center md:text-left" data-aos="fade-left">
+      <h2 class="text-3xl sm:text-4xl font-bold text-blue-800 mb-4">Be the Change You Wish to See</h2>
+      <p class="text-gray-700 text-base sm:text-lg mb-6">
+        Join our community efforts in <span class="font-semibold text-emerald-600">Matrimony</span>,
+        <span class="font-semibold text-emerald-600">Volunteering</span>, and <span class="font-semibold text-emerald-600">Welfare Services</span>.
+      </p>
+      <a href="#registration-links" class="inline-block bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded-full shadow-md transition">
+        Explore Registration Options
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- Registration Options -->
+ <section id="registration-links" class="py-12 px-4">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+      <!-- Matrimony Registration -->
+      <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-1 transition duration-300" data-aos="fade-up">
+        <img src="images/matrimony.png" alt="Matrimony" class="w-16 h-16 mx-auto mb-4">
+        <h3 class="text-xl font-semibold text-center text-pink-700 mb-2">Matrimony</h3>
+        <p class="text-sm text-center text-gray-600 mb-4">Register for our simple, dowry-free, low-cost marriage support program.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7FwlxLDX-ypVu5zkEcowOZbyHtidiANUWxOPnE5shZt3i2g/viewform?usp=sharing&ouid=116014468662963760290" target="_blank"
+           class="block text-center bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 rounded transition">
+          Register Now
+        </a>
+      </div>
+
+      <!-- Volunteer Registration -->
+      <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-1 transition duration-300" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/volunteer.jpeg" alt="Volunteer" class="w-16 h-16 mx-auto mb-4">
+        <h3 class="text-xl font-semibold text-center text-green-700 mb-2">Volunteer</h3>
+        <p class="text-sm text-center text-gray-600 mb-4">Help our team with education, welfare, or outreach programs.</p>
+        <a href="https://forms.gle/NUYyxtFQwLBLLvvR8" target="_blank"
+           class="block text-center bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded transition">
+          Join as Volunteer
+        </a>
+      </div>
+
+      <!-- General Registration -->
+      <div class="bg-white rounded-lg shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-1 transition duration-300" data-aos="fade-up" data-aos-delay="200">
+        <img src="images/register.png" alt="Register" class="w-16 h-16 mx-auto mb-4">
+        <h3 class="text-xl font-semibold text-center text-blue-700 mb-2">General Support</h3>
+        <p class="text-sm text-center text-gray-600 mb-4">Register for any other purpose – scholarship, employment, or help.</p>
+        <a href="https://docs.google.com/forms/d/e/YOUR_GENERAL_FORM_LINK/viewform" target="_blank"
+           class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded transition">
+          Register
+        </a>
+      </div>
+
+    </div>
+  </section>
+<div id="footer"></div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Failed to load footer:', error);
+    });
+</script>
+
+
+  <!-- AOS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+</body>
+</html>

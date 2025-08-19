@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Donate - Mustafa Kamaal Education & Welfare Society</title>
+  
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  
+  <style>
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .fade-in {
+      animation: fadeIn 1.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 fade-in">
+
+<!-- Header -->
+<div id="header"></div>
+
+<main class="max-w-4xl mx-auto px-4 py-12">
+  <h1 class="text-3xl font-bold text-center text-blue-800 mb-8 animate__animated animate__fadeInDown">
+    Donation Methods
+  </h1>
+
+  <div class="grid md:grid-cols-2 gap-8">
+    <!-- QR Code -->
+    <div class="bg-white rounded-xl shadow-md p-6 text-center card-hover animate__animated animate__fadeInLeft">
+      <div class="p-3 bg-blue-100 rounded-full inline-block mb-4">
+        <i class="fas fa-qrcode text-blue-600 text-4xl"></i>
+      </div>
+      <h2 class="text-xl font-semibold mb-4">Scan QR Code</h2>
+      <img src="images/qrcode.jpg" 
+           alt="Donation QR Code"
+           class="mx-auto w-56 h-auto border-4 border-white rounded-lg shadow-lg mb-4 pulse"
+           loading="lazy">
+      <p class="text-gray-600 animate__animated animate__fadeIn">Use any UPI app to scan</p>
+    </div>
+
+    <!-- Bank Transfer -->
+    <div class="bg-white rounded-xl shadow-md p-6 card-hover animate__animated animate__fadeInRight">
+      <div class="p-3 bg-green-100 rounded-full inline-block mb-4 mx-auto">
+        <i class="fas fa-university text-green-600 text-4xl"></i>
+      </div>
+      <h2 class="text-xl font-semibold mb-4 text-center">Bank Transfer</h2>
+      <div class="space-y-3 animate__animated animate__fadeIn">
+        <div class="bg-gray-50 p-3 rounded-lg">
+          <p class="font-medium text-gray-700">Account Name:</p>
+          <p class="font-semibold">MUSTAFA KAMAAL EDUCATION AND WELFARE SOC</p>
+        </div>
+        <div class="bg-gray-50 p-3 rounded-lg">
+          <p class="font-medium text-gray-700">Account Number:</p>
+          <p class="font-semibold">42782020558</p>
+        </div>
+        <div class="bg-gray-50 p-3 rounded-lg">
+          <p class="font-medium text-gray-700">IFSC Code:</p>
+          <p class="font-semibold">SBIN0030115</p>
+        </div>
+        <div class="bg-gray-50 p-3 rounded-lg">
+          <p class="font-medium text-gray-700">Bank Name:</p>
+          <p class="font-semibold">State Bank Of India</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Footer -->
+<div id="footer"></div>
+
+<!-- Font Awesome -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+<script>
+  // Simple header loader with animation
+  fetch('header.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+      // Add pulse to donate button in header
+      const donateBtn = document.querySelector('header a[href="donate.html"]');
+      if (donateBtn) donateBtn.classList.add('pulse');
+    })
+    .catch(() => {
+      document.getElementById('header').innerHTML = `
+        <header class="bg-blue-700 text-white p-4 shadow-lg animate__animated animate__fadeInDown">
+          <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold">Mustafa Kamaal Welfare Society</h1>
+            <a href="donate.html" class="bg-white text-blue-700 px-4 py-2 rounded-full font-bold pulse">
+              Donate
+            </a>
+          </div>
+        </header>`;
+    });
+
+ 
+</script>
+
+<div id="footer"></div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Failed to load footer:', error);
+    });
+</script>
+
+
+</body>
+</html>

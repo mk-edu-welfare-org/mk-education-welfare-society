@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>About Us - Mustafa Kamaal Welfare Society</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    .mission-card {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-left: 4px solid #1d4ed8;
+    }
+    
+    .service-card {
+      transition: all 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .icon-container {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<!-- Header -->
+<div id="header"></div>
+<script>
+  function setupMobileMenu() {
+    const toggleButton = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (toggleButton && mobileMenu) {
+      toggleButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+      });
+    }
+  }
+
+  fetch('header.html')
+    .then(res => {
+      if (!res.ok) throw new Error('Failed to load header');
+      return res.text();
+    })
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+      setupMobileMenu();
+    })
+    .catch(() => {
+      document.getElementById('header').innerHTML = `
+        <header class="bg-blue-700 text-white p-4 shadow-md">
+          <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+              <img src="images/logo.jpg" class="w-10 h-10 rounded-full mr-3" alt="Logo">
+              <h1 class="text-lg font-bold">Mustafa Kamaal Welfare Society</h1>
+            </div>
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+            <nav class="hidden md:block">
+              <a href="index.html" class="px-3 hover:text-blue-200">Home</a>
+              <a href="about.html" class="px-3 hover:text-blue-200">About</a>
+              <a href="activities.html" class="px-3 hover:text-blue-200">Activities</a>
+              <a href="gallery.html" class="px-3 hover:text-blue-200">Gallery</a>
+              <a href="contact.html" class="px-3 hover:text-blue-200">Contact</a>
+              <a href="group.html" class="px-3 hover:text-blue-200">Groups</a>
+              <a href="donate.html" class="ml-2 bg-white text-blue-700 px-4 py-1 rounded-full font-bold">Donate</a>
+            </nav>
+          </div>
+          <!-- Mobile Menu -->
+          <div id="mobile-menu" class="mobile-menu md:hidden bg-blue-800 mt-2">
+            <div class="flex flex-col space-y-2 p-4">
+              <a href="index.html" class="block py-2 hover:bg-blue-700 px-3 rounded">Home</a>
+              <a href="about.html" class="block py-2 hover:bg-blue-700 px-3 rounded">About</a>
+              <a href="activities.html" class="block py-2 hover:bg-blue-700 px-3 rounded">Activities</a>
+              <a href="gallery.html" class="block py-2 hover:bg-blue-700 px-3 rounded">Gallery</a>
+              <a href="contact.html" class="block py-2 hover:bg-blue-700 px-3 rounded">Contact</a>
+              <a href="group.html" class="block py-2 hover:bg-blue-700 px-3 rounded">Groups</a>
+              <a href="donate.html" class="block py-2 bg-white text-blue-700 font-bold px-3 rounded text-center">Donate</a>
+            </div>
+          </div>
+        </header>`;
+      setupMobileMenu();
+    });
+</script>
+
+
+ 
+
+
+<!-- Alternative Option with Pattern Background -->
+
+<section class="bg-white text-blue-800 py-16 text-center border-b border-gray-200">
+  <div class="max-w-4xl mx-auto px-4">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">About Our Organization</h1>
+    <div class="w-24 h-1 bg-emerald-500 mx-auto mb-6"></div>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+      Empowering communities through ethical values, education, and women's upliftment
+    </p>
+  </div>
+</section>
+
+
+<!-- Organization Intro -->
+<section class="py-12 px-4 sm:px-6 max-w-6xl mx-auto">
+  <div class="bg-white rounded-xl shadow-md p-8 mb-12" data-aos="fade-up">
+    <p class="text-gray-700 text-center text-lg">
+      Mustafa Kamaal Education and Welfare Society (Indore, M.P., India) is a non-profit organization dedicated to simplifying marriages, promoting education, and empowering women—all while upholding Islamic values and social welfare principles.
+    </p>
+  </div>
+
+  <!-- Mission Section -->
+  <div class="mb-12">
+    <h2 class="text-2xl sm:text-3xl font-bold text-blue-700 mb-6 text-center">Our Mission</h2>
+    <div class="mission-card rounded-lg p-8 shadow-md max-w-4xl mx-auto" data-aos="fade-up">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex items-start">
+          <div class="icon-container bg-blue-100 text-blue-600 mr-4">
+            <i class="fas fa-heart"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-800 mb-2">Dowry-Free Marriages</h3>
+            <p class="text-gray-600">Eliminate dowry and make marriages simple, affordable, and Sunnah-compliant</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <div class="icon-container bg-emerald-100 text-emerald-600 mr-4">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-800 mb-2">Education Support</h3>
+            <p class="text-gray-600">Support students in pursuing higher education through scholarships and guidance</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <div class="icon-container bg-purple-100 text-purple-600 mr-4">
+            <i class="fas fa-female"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-800 mb-2">Women Empowerment</h3>
+            <p class="text-gray-600">Empower women (Mahila Sashaktikaran) by fighting against dowry</p>
+          </div>
+        </div>
+        
+        <div class="flex items-start">
+          <div class="icon-container bg-yellow-100 text-yellow-600 mr-4">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-800 mb-2">Employment</h3>
+            <p class="text-gray-600">Generate lawful employment opportunities to uplift communities</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What We Do Section -->
+  <div class="mb-12">
+    <h2 class="text-2xl sm:text-3xl font-bold text-blue-700 mb-8 text-center">What We Do</h2>
+    
+    <!-- 1. Ethical Marriages -->
+    <div class="service-card bg-white rounded-xl shadow-md overflow-hidden mb-8" data-aos="fade-up">
+      <div class="md:flex">
+        <div class="md:w-1/3 bg-blue-50 flex items-center justify-center p-6">
+          <i class="fas fa-ring text-6xl text-blue-600"></i>
+        </div>
+        <div class="p-6 md:w-2/3">
+          <h3 class="text-xl font-bold text-blue-700 mb-4">1. Ethical & Affordable Marriages</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+              <span><strong>Dowry-Free Nikah:</strong> Promoting marriages without financial burdens</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+              <span><strong>Matchmaking (Ahkamaat-e-Kafu):</strong> Ensuring compatibility based on Islamic principles</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+              <span><strong>Marriage Counseling:</strong> Pre and post-marriage guidance for couples</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 2. Education -->
+    <div class="service-card bg-white rounded-xl shadow-md overflow-hidden mb-8" data-aos="fade-up">
+      <div class="md:flex flex-row-reverse">
+        <div class="md:w-1/3 bg-emerald-50 flex items-center justify-center p-6">
+          <i class="fas fa-book-open text-6xl text-emerald-600"></i>
+        </div>
+        <div class="p-6 md:w-2/3">
+          <h3 class="text-xl font-bold text-blue-700 mb-4">2. Education & Career Guidance</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+              <span><strong>Scholarships & Financial Aid</strong> for deserving students</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+              <span><strong>Career Counseling</strong> for youth to choose the right profession</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+              <span><strong>Parent & Student Counseling</strong> to address academic challenges</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 3. Women Empowerment -->
+    <div class="service-card bg-white rounded-xl shadow-md overflow-hidden mb-8" data-aos="fade-up">
+      <div class="md:flex">
+        <div class="md:w-1/3 bg-purple-50 flex items-center justify-center p-6">
+          <i class="fas fa-hands-helping text-6xl text-purple-600"></i>
+        </div>
+        <div class="p-6 md:w-2/3">
+          <h3 class="text-xl font-bold text-blue-700 mb-4">3. Women's Empowerment (Mahila Sashaktikaran)</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+              <span><strong>Anti-Dowry Awareness:</strong> Campaigns against dowry exploitation</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+              <span><strong>Skill Development & Employment:</strong> Helping women achieve financial stability</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+              <span><strong>Legal Support:</strong> Assisting women in marital and family disputes</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 4. Employment -->
+    <div class="service-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+      <div class="md:flex flex-row-reverse">
+        <div class="md:w-1/3 bg-yellow-50 flex items-center justify-center p-6">
+          <i class="fas fa-briefcase text-6xl text-yellow-600"></i>
+        </div>
+        <div class="p-6 md:w-2/3">
+          <h3 class="text-xl font-bold text-blue-700 mb-4">4. Employment & Social Welfare</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+              <span><strong>Creating sustainable income sources</strong> for unemployed individuals</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-emerald-500 mt-1 mr-3"></i>
+              <span><strong>Encouraging halal (lawful) earnings</strong> through skill-based opportunities</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vision Section -->
+  <div class="mb-12">
+    <h2 class="text-2xl sm:text-3xl font-bold text-blue-700 mb-6 text-center">Our Vision</h2>
+    <div class="bg-green-50 rounded-xl p-8 max-w-4xl mx-auto" data-aos="fade-up">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex items-start">
+          <i class="fas fa-check-circle text-emerald-500 text-xl mt-1 mr-3"></i>
+          <span>Marriages are simple, dignified, and free from greed</span>
+        </div>
+        <div class="flex items-start">
+          <i class="fas fa-check-circle text-emerald-500 text-xl mt-1 mr-3"></i>
+          <span>No student is deprived of education due to poverty</span>
+        </div>
+        <div class="flex items-start">
+          <i class="fas fa-check-circle text-emerald-500 text-xl mt-1 mr-3"></i>
+          <span>Women are respected, independent, and protected from exploitation</span>
+        </div>
+        <div class="flex items-start">
+          <i class="fas fa-check-circle text-emerald-500 text-xl mt-1 mr-3"></i>
+          <span>Every individual has access to lawful employment</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="bg-blue-50 rounded-xl p-8 text-center" data-aos="fade-up">
+    <h3 class="text-2xl font-bold text-blue-700 mb-4">Join Us in Making a Difference!</h3>
+    <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+      <span class="font-semibold italic">"Platform InshaAllah"</span> – Together, we can build a stronger, more ethical community.
+    </p>
+    
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="contact.html" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition flex items-center justify-center">
+        <i class="fas fa-envelope mr-2"></i> Contact Us
+      </a>
+      <a href="donate.html" class="bg-white hover:bg-gray-100 text-blue-700 border border-blue-300 px-6 py-3 rounded-full font-semibold transition flex items-center justify-center">
+        <i class="fas fa-hand-holding-heart mr-2"></i> Donate Now
+      </a>
+    </div>
+  </div>
+</section>
+
+<div id="footer"></div>
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Failed to load footer:', error);
+    });
+</script>
+
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // Initialize AOS after page load
+  document.addEventListener('DOMContentLoaded', function() {
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      once: true
+    });
+  });
+</script>
+</body>
+</html>
