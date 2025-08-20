@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Mustafa Kamaal Welfare Society</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  
+  <style>
+    /* Custom animations */
+    .fade-in-item {
+      opacity: 0;
+      animation: fadeIn 0.8s forwards;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .mobile-menu.active {
+      max-height: 500px;
+    }
+    
+    /* Pulse animation for important elements */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .animate-pulse {
+      animation: pulse 2s infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+<!-- Header Section (will be loaded via JS) -->
+<div id="header"></div>
+
+<!-- Main Content -->
+<main class="min-h-screen">
+  <!-- Contact Section -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center text-blue-700 mb-12 animate__animated animate__fadeInDown">
+        Get in Touch
+      </h2>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Contact Info -->
+        <div class="space-y-8">
+          <!-- Phone -->
+          <div class="flex items-start space-x-5 fade-in-item" style="animation-delay: 0.2s">
+            <div class="bg-emerald-100 p-4 rounded-full text-emerald-600 text-xl animate__animated animate__pulse animate__infinite animate__slower">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800">Phone Numbers</h3>
+              <p class="text-gray-600 mt-2 hover:text-emerald-600 transition">
+                <i class="fas fa-phone mr-2"></i> 9893081653
+              </p>
+              <p class="text-gray-600 hover:text-emerald-600 transition">
+                <i class="fas fa-phone mr-2"></i> 6262940010
+              </p>
+            </div>
+          </div>
+          
+          <!-- Email -->
+          <div class="flex items-start space-x-5 fade-in-item" style="animation-delay: 0.4s">
+            <div class="bg-indigo-100 p-4 rounded-full text-indigo-600 text-xl">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800">Email</h3>
+              <p class="text-gray-600 mt-2 hover:text-indigo-600 transition">
+                <i class="fas fa-envelope mr-2"></i> mkpb560@gmail.com
+              </p>
+            </div>
+          </div>
+          
+          <!-- Address -->
+          <div class="flex items-start space-x-5 fade-in-item" style="animation-delay: 0.6s">
+            <div class="bg-red-100 p-4 rounded-full text-red-600 text-xl">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800">Address</h3>
+              <p class="text-gray-600 mt-2 hover:text-red-600 transition">
+                <i class="fas fa-map-marker-alt mr-2"></i> Indore, Madhya Pradesh, India
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Contact Image -->
+        <div class="animate__animated animate__fadeInRight">
+          <img src="images/contact-us.jpg" alt="Contact Us" 
+               class="w-full max-w-md mx-auto rounded-xl shadow-xl border-4 border-white transform hover:scale-105 transition duration-500"
+               onerror="this.src='https://via.placeholder.com/500x350?text=Contact+Us+Image'">
+        </div>
+      </div>
+      
+      <!-- Additional Contact Form (optional) -->
+      <div class="mt-16 max-w-2xl mx-auto bg-blue-50 p-8 rounded-xl shadow-md animate__animated animate__fadeInUp">
+        <h3 class="text-2xl font-bold text-center text-blue-700 mb-6">Send Us a Message</h3>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-gray-700 mb-1">Your Name</label>
+            <input type="text" class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-1">Your Email</label>
+            <input type="email" class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div>
+            <label class="block text-gray-700 mb-1">Message</label>
+            <textarea rows="4" class="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition font-semibold animate-pulse">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Failed to load footer:', error);
+    });
+</script>
+
+<!-- Header Loader Script -->
+<script>
+  function setupMobileMenu() {
+    const toggleButton = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (toggleButton && mobileMenu) {
+      toggleButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+      });
+    }
+  }
+
+  fetch('header.html')
+    .then(res => {
+      if (!res.ok) throw new Error('Failed to load header');
+      return res.text();
+    })
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+      setupMobileMenu();
+    })
+    .catch(() => {
+      document.getElementById('header').innerHTML = `
+        <header class="bg-blue-700 text-white p-4 shadow-md">
+          <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+              <img src="images/logo.jpg" class="w-10 h-10 rounded-full mr-3" alt="Logo">
+              <h1 class="text-lg font-bold">Mustafa Kamaal Welfare Society</h1>
+            </div>
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+            <nav class="hidden md:block">
+              <a href="index.html" class="px-3 hover:text-blue-200">Home</a>
+              <a href="about.html" class="px-3 hover:text-blue-200">About</a>
+              <a href="activities.html" class="px-3 hover:text-blue-200">Activities</a>
+              <a href="gallery.html" class="px-3 hover:text-blue-200">Gallery</a>
+              <a href="contact.html" class="px-3 hover:text-blue-200">Contact</a>
+              <a href="group.html" class="px-3 hover:text-blue-200">Groups</a>
+              <a href="donate.html" class="ml-2 bg-white text-blue-700 px-4 py-1 rounded-full font-bold">Donate</a>
+            </nav>
+          </div>
+          <!-- Mobile Menu -->
+          <div id="mobile-menu" class="mobile-menu md:hidden bg-blue-800 mt-2">
+            <div class="flex flex-col space-y-2 p-4">
+              <a href="index.html" class="block py-2 hover:bg-blue-700 px-3 rounded">Home</a>
+              <a href="about.html" class="block py-2 hover:bg-blue-700 px-3 rounded">About</a>
+              <a href="activities.html" class="block py-2 hover:bg-blue-700 px-3 rounded">Activities</a>
+              <a href="gallery.html" class="block py-2 hover:bg-blue-700 px-3 rounded">Gallery</a>
+              <a href="contact.html" class="block py-2 hover:bg-blue-700 px-3 rounded">Contact</a>
+              <a href="group.html" class="block py-2 hover:bg-blue-700 px-3 rounded">Groups</a>
+              <a href="donate.html" class="block py-2 bg-white text-blue-700 font-bold px-3 rounded text-center">Donate</a>
+            </div>
+          </div>
+        </header>`;
+      setupMobileMenu();
+    });
+    
+  // Initialize animations after page load
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add sequential animation to contact items
+    const contactItems = document.querySelectorAll('.fade-in-item');
+    contactItems.forEach((item, index) => {
+      item.style.animationDelay = `${index * 0.2}s`;
+    });
+    
+    // Add hover effect to contact icons
+    const contactIcons = document.querySelectorAll('.flex.items-start.space-x-5 > div:first-child');
+    contactIcons.forEach(icon => {
+      icon.addEventListener('mouseenter', () => {
+        icon.classList.add('animate__tada');
+      });
+      icon.addEventListener('mouseleave', () => {
+        icon.classList.remove('animate__tada');
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

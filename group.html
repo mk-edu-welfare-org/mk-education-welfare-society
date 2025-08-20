@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Join Our Groups - Mustafa Kamaal Welfare Society</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+    /* Custom pulse animation for donate button */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .pulse-animate {
+      animation: pulse 2s infinite;
+    }
+    
+    /* Gradient background for sections */
+    .gradient-bg {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e6f3ff 100%);
+    }
+    
+    /* Floating animation for cards */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    .float-animate {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    /* Shine effect on hover */
+    .hover-shine:hover {
+      position: relative;
+      overflow: hidden;
+    }
+    .hover-shine:hover::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: rotate(30deg);
+      transition: all 0.6s ease;
+      pointer-events: none;
+    }
+  </style>
+  
+  <script>
+    // Initialize AOS when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out-quad',
+        once: false,
+        mirror: true
+      });
+      
+      // Add hover class to cards
+      const cards = document.querySelectorAll('.group-card');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.classList.add('hover:shadow-xl');
+        });
+        card.addEventListener('mouseleave', () => {
+          card.classList.remove('hover:shadow-xl');
+        });
+      });
+    });
+  </script>
+</head>
+<body class="bg-gray-50">
+<!-- Header -->
+<div id="header"></div>
+<script>
+  fetch('header.html')
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('Failed to load header');
+      }
+      return res.text();
+    })
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+      // Add pulse animation to donate button after header loads
+      const donateBtn = document.querySelector('a[href="donate.html"]');
+      if (donateBtn) {
+        donateBtn.classList.add('pulse-animate');
+      }
+    })
+    .catch(err => {
+      console.error(err);
+    });
+</script>
+
+<!-- Join Our Online Communities Section -->
+<section class="py-16 gradient-bg">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-16" data-aos="fade-down" data-aos-delay="100">
+      <h2 class="text-4xl font-bold text-blue-700 mb-4 transform transition hover:scale-105 inline-block">
+        Join Our Online Communities
+      </h2>
+      <div class="w-24 h-1 bg-blue-500 mx-auto mt-4 rounded-full" data-aos="fade-right" data-aos-delay="200"></div>
+      <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+        Connect with us on WhatsApp, YouTube, and Telegram for updates, resources, and community support.
+      </p>
+    </div>
+
+    <!-- State-Wise WhatsApp Groups -->
+    <div class="mb-16 bg-white p-8 rounded-2xl shadow-lg group-card hover-shine transition-all duration-500 transform hover:-translate-y-2" 
+         data-aos="zoom-in" data-aos-delay="100">
+      <div class="flex items-center mb-6">
+        <div class="mr-4 p-3 bg-green-100 rounded-full">
+          <i class="fab fa-whatsapp text-green-600 text-2xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-green-700">State-Wise WhatsApp Groups</h3>
+      </div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <a href="https://chat.whatsapp.com/KWfpwdU0I5k9wmaObmhN25?mode=r_t" 
+           class="bg-gradient-to-br from-green-100 to-green-50 hover:from-green-200 hover:to-green-100 text-green-800 px-4 py-3 rounded-xl font-semibold shadow text-center transition-all duration-300 transform hover:scale-105 hover:shadow-md block border border-green-200">
+          West Bengal
+        </a>
+        <a href="https://chat.whatsapp.com/HYnOVzsbmJj8nvAhmmF6Qw?mode=r_t" 
+           class="bg-gradient-to-br from-green-100 to-green-50 hover:from-green-200 hover:to-green-100 text-green-800 px-4 py-3 rounded-xl font-semibold shadow text-center transition-all duration-300 transform hover:scale-105 hover:shadow-md block border border-green-200">
+          Punjab
+        </a>
+        <a href="https://chat.whatsapp.com/KeCc2GsMyU44kkvlf5VdNd?mode=r_t" 
+           class="bg-gradient-to-br from-green-100 to-green-50 hover:from-green-200 hover:to-green-100 text-green-800 px-4 py-3 rounded-xl font-semibold shadow text-center transition-all duration-300 transform hover:scale-105 hover:shadow-md block border border-green-200">
+          Madhya Pradesh
+        </a>
+        <a href="https://chat.whatsapp.com/DS9ISpvUSSxK8oXogDluaP?mode=r_t" 
+           class="bg-gradient-to-br from-green-100 to-green-50 hover:from-green-200 hover:to-green-100 text-green-800 px-4 py-3 rounded-xl font-semibold shadow text-center transition-all duration-300 transform hover:scale-105 hover:shadow-md block border border-green-200">
+          Bihar
+        </a>
+        <a href="https://chat.whatsapp.com/DS9ISpvUSSxK8oXogDluaP?mode=r_t" 
+           class="bg-gradient-to-br from-green-100 to-green-50 hover:from-green-200 hover:to-green-100 text-green-800 px-4 py-3 rounded-xl font-semibold shadow text-center transition-all duration-300 transform hover:scale-105 hover:shadow-md block border border-green-200">
+          Uttar Pradesh
+        </a>
+      </div>
+    </div>
+
+    <!-- Special Purpose WhatsApp Groups -->
+    <div class="mb-16 bg-white p-8 rounded-2xl shadow-lg group-card hover-shine transition-all duration-500 transform hover:-translate-y-2" 
+         data-aos="zoom-in" data-aos-delay="200">
+      <div class="flex items-center mb-6">
+        <div class="mr-4 p-3 bg-indigo-100 rounded-full">
+          <i class="fas fa-users text-indigo-600 text-2xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-indigo-700">Special Purpose WhatsApp Groups</h3>
+      </div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <a href="https://chat.whatsapp.com/GXu50Rms3Lb0A9m5xhPpYX?mode=r_t" 
+           class="bg-gradient-to-br from-indigo-100 to-indigo-50 hover:from-indigo-200 hover:to-indigo-100 text-indigo-800 px-4 py-3 rounded-xl font-semibold shadow text-center transition-all duration-300 transform hover:scale-105 hover:shadow-md block border border-indigo-200">
+          All India Match Making
+        </a>
+       
+        <a href="https://chat.whatsapp.com/EyS78vZWqGz3s3xxNJDoPq?mode=r_t" 
+           class="bg-gradient-to-br from-indigo-100 to-indigo-50 hover:from-indigo-200 hover:to-indigo-100 text-indigo-800 px-4 py-3 rounded-xl font-semibold shadow text-center transition-all duration-300 transform hover:scale-105 hover:shadow-md block border border-indigo-200">
+          Govt Jobs Info
+        </a>
+        <a href="https://chat.whatsapp.com/DPbOGM4s1AlEWyeTkhknoI?mode=r_t" 
+           class="bg-gradient-to-br from-indigo-100 to-indigo-50 hover:from-indigo-200 hover:to-indigo-100 text-indigo-800 px-4 py-3 rounded-xl font-semibold shadow text-center transition-all duration-300 transform hover:scale-105 hover:shadow-md block border border-indigo-200">
+          Volunteers Group
+        </a>
+        <a href="https://chat.whatsapp.com/Fh6LwfB0vaN4AmcuoWvPfh?mode=r_t" 
+           class="bg-gradient-to-br from-indigo-100 to-indigo-50 hover:from-indigo-200 hover:to-indigo-100 text-indigo-800 px-4 py-3 rounded-xl font-semibold shadow text-center transition-all duration-300 transform hover:scale-105 hover:shadow-md block border border-indigo-200">
+          Scholarship Group
+        </a>
+        <a href="https://chat.whatsapp.com/JBkJnMgN9wMEw2iQJAcK5o?mode=r_t" 
+           class="bg-gradient-to-br from-indigo-100 to-indigo-50 hover:from-indigo-200 hover:to-indigo-100 text-indigo-800 px-4 py-3 rounded-xl font-semibold shadow text-center transition-all duration-300 transform hover:scale-105 hover:shadow-md block border border-indigo-200">
+          Funful Tutorials
+        </a>
+        <a href="https://chat.whatsapp.com/HCSL401v1KF0SYnDoqPLj2?mode=r_t" 
+           class="bg-gradient-to-br from-indigo-100 to-indigo-50 hover:from-indigo-200 hover:to-indigo-100 text-indigo-800 px-4 py-3 rounded-xl font-semibold shadow text-center transition-all duration-300 transform hover:scale-105 hover:shadow-md block border border-indigo-200">
+          International Jobs
+        </a>
+        <a href="https://chat.whatsapp.com/5KOtYuudSuvJlewDHBksBs?mode=r_t" 
+           class="bg-gradient-to-br from-indigo-100 to-indigo-50 hover:from-indigo-200 hover:to-indigo-100 text-indigo-800 px-4 py-3 rounded-xl font-semibold shadow text-center transition-all duration-300 transform hover:scale-105 hover:shadow-md block border border-indigo-200">
+          Halal & Freelancing
+        </a>
+      </div>
+    </div>
+
+    <!-- Social Media Cards -->
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Telegram -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg group-card hover-shine transition-all duration-500 transform hover:-translate-y-2 float-animate" 
+           data-aos="fade-right" data-aos-delay="300">
+        <div class="flex items-center mb-6">
+          <div class="mr-4 p-3 bg-blue-100 rounded-full">
+            <i class="fab fa-telegram text-blue-500 text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-blue-600">Telegram Group</h3>
+        </div>
+        <p class="text-gray-600 mb-6">Join our Telegram channel for instant updates and announcements.</p>
+        <a href="tg://resolve?domain=so2ciety"
+           class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-3 rounded-full font-semibold shadow text-center transition-all duration-300 transform hover:scale-105 hover:shadow-lg inline-block">
+          <i class="fab fa-telegram mr-2"></i> Join Telegram
+        </a>
+      </div>
+
+      <!-- YouTube -->
+      <div class="bg-white p-8 rounded-2xl shadow-lg group-card hover-shine transition-all duration-500 transform hover:-translate-y-2 float-animate" 
+           data-aos="fade-left" data-aos-delay="300">
+        <div class="flex items-center mb-6">
+          <div class="mr-4 p-3 bg-red-100 rounded-full">
+            <i class="fab fa-youtube text-red-600 text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-red-600">YouTube Channel</h3>
+        </div>
+        <p class="text-gray-600 mb-6">Subscribe to our YouTube channel for educational and inspirational content.</p>
+        <a href="https://youtu.be/h4_cJ-PqAa0?si=Cxxzjp-_06nTDnXy" 
+           class="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-6 py-3 rounded-full font-semibold shadow text-center transition-all duration-300 transform hover:scale-105 hover:shadow-lg inline-block">
+          <i class="fab fa-youtube mr-2"></i> Subscribe Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Floating Donate Button for Mobile -->
+<div class="fixed bottom-6 right-6 z-50 md:hidden">
+  <a href="donate.html" class="bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl transform transition hover:scale-110 pulse-animate">
+    <i class="fas fa-hand-holding-heart text-2xl"></i>
+  </a>
+</div>
+
+<div id="footer"></div>
+
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer').innerHTML = data;
+    })
+    .catch(error => {
+      console.error('Failed to load footer:', error);
+    });
+</script>
+
+
+</script>
+</body>
+</html>
