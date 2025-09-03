@@ -10,17 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <style>
-        /* Custom animation for elements fading in */
-        @keyframes fade-in {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-            animation: fade-in 0.8s ease-out forwards;
-        }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-400 { animation-delay: 0.4s; }
-
         /* Smooth transition for mobile menu */
         .mobile-menu {
             max-height: 0;
@@ -28,24 +17,23 @@
             transition: max-height 0.3s ease-out;
         }
         .mobile-menu.active {
-            max-height: 500px; /* Adjust if menu becomes taller */
+            max-height: 500px;
         }
         
-        /* Ensures the page doesn't have horizontal scrollbars */
         body, html {
             overflow-x: hidden;
             width: 100%;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-white text-gray-800">
 
-<header id="header" class="bg-blue-700 text-white p-3 shadow-md sticky top-0 z-50">
-    <div class="container mx-auto flex justify-between items-center">
-        <div class="flex items-center space-x-3">
+<header id="header" class="bg-blue-700 text-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+        <div class="flex items-center space-x-4">
             <img src="images/logo.jpg" class="w-12 h-12 rounded-full object-cover" alt="Society Logo">
-            <h1 class="text-sm sm:text-base font-bold leading-tight">
-                M.K Education <br class="sm:hidden"> & Welfare Society
+            <h1 class="text-lg font-bold">
+                M.K Education & Welfare Society
             </h1>
         </div>
 
@@ -54,111 +42,80 @@
         </button>
 
         <nav class="hidden md:flex items-center space-x-2">
-            <a href="index.html" class="px-3 py-2 hover:bg-blue-600 rounded-md text-sm">Home</a>
-            <a href="register.html" class="px-3 py-2 hover:bg-blue-600 rounded-md text-sm">Register</a>
-            <a href="about.html" class="px-3 py-2 hover:bg-blue-600 rounded-md text-sm">About</a>
-            <a href="contact.html" class="px-3 py-2 hover:bg-blue-600 rounded-md text-sm">Contact</a>
-            <a href="group.html" class="px-3 py-2 hover:bg-blue-600 rounded-md text-sm">Groups</a>
-            <a href="donate.html" class="ml-2 bg-white text-blue-700 px-4 py-2 rounded-full font-bold text-sm whitespace-nowrap hover:bg-gray-200 transition">Donate</a>
+            <a href="index.html" class="px-3 py-2 hover:bg-blue-600 rounded-md text-sm font-medium">Home</a>
+            <a href="register.html" class="px-3 py-2 hover:bg-blue-600 rounded-md text-sm font-medium">Register</a>
+            <a href="about.html" class="px-3 py-2 hover:bg-blue-600 rounded-md text-sm font-medium">About</a>
+            <a href="contact.html" class="px-3 py-2 hover:bg-blue-600 rounded-md text-sm font-medium">Contact</a>
+            <a href="group.html" class="px-3 py-2 hover:bg-blue-600 rounded-md text-sm font-medium">Groups</a>
+            <a href="donate.html" class="ml-4 bg-white text-blue-700 px-4 py-2 rounded-md font-bold text-sm hover:bg-gray-200 transition">Donate</a>
         </nav>
     </div>
 
-    <div id="mobile-menu" class="mobile-menu md:hidden bg-blue-800 mt-2">
-        <div class="flex flex-col p-3 space-y-1">
-            <a href="index.html" class="block py-2 hover:bg-blue-700 px-3 rounded text-sm">Home</a>
-            <a href="register.html" class="block py-2 hover:bg-blue-700 px-3 rounded text-sm">Register</a>
-            <a href="about.html" class="block py-2 hover:bg-blue-700 px-3 rounded text-sm">About</a>
-            <a href="contact.html" class="block py-2 hover:bg-blue-700 px-3 rounded text-sm">Contact</a>
-            <a href="group.html" class="block py-2 hover:bg-blue-700 px-3 rounded text-sm">Groups</a>
-            <a href="donate.html" class="block py-2 bg-white text-blue-700 font-bold px-3 rounded text-center text-sm mt-2">Donate</a>
+    <div id="mobile-menu" class="mobile-menu md:hidden">
+        <div class="flex flex-col px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="index.html" class="block py-2 px-3 hover:bg-blue-600 rounded text-base font-medium">Home</a>
+            <a href="register.html" class="block py-2 px-3 hover:bg-blue-600 rounded text-base font-medium">Register</a>
+            <a href="about.html" class="block py-2 px-3 hover:bg-blue-600 rounded text-base font-medium">About</a>
+            <a href="contact.html" class="block py-2 px-3 hover:bg-blue-600 rounded text-base font-medium">Contact</a>
+            <a href="group.html" class="block py-2 px-3 hover:bg-blue-600 rounded text-base font-medium">Groups</a>
+            <a href="donate.html" class="block mt-2 py-2 bg-white text-blue-700 font-bold px-3 rounded text-center text-base">Donate</a>
         </div>
     </div>
 </header>
 
 <main>
-    <section class="relative h-[60vh] md:h-[70vh] max-h-[650px] flex items-center justify-center text-center">
-        <img src="images/banner.jpeg" alt="Community Banner" class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="relative z-10 container mx-auto px-4">
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg animate-fade-in mb-4">
-                Empowering Lives, Building Futures
-            </h2>
-            <p class="text-base lg:text-lg text-gray-200 drop-shadow-md animate-fade-in delay-200 max-w-2xl mx-auto mb-6">
-                Join us to support Education, Welfare, Employment & Women Empowerment.
-            </p>
-            <a href="donate.html" class="bg-white hover:bg-gray-200 text-emerald-700 font-semibold px-6 py-3 rounded-full shadow-lg transition duration-300 text-sm md:text-base animate-fade-in delay-400">
+    <section>
+        <div class="relative bg-gray-700 text-white text-center">
+             <img src="images/banner.jpeg" alt="Community Banner" class="absolute inset-0 w-full h-full object-cover opacity-30" loading="lazy" />
+             <div class="relative z-10 max-w-4xl mx-auto px-4 py-16 sm:py-20 lg:py-24">
+                <p class="text-sm sm:text-base text-gray-300">Reg. No. 03/27/01/24813</p>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-2">
+                    Empowering Lives, Building Futures
+                </h2>
+                <p class="mt-4 text-base sm:text-lg text-gray-200">
+                    Join us to support Education, Welfare, Employment & Women Empowerment.
+                </p>
+             </div>
+        </div>
+        <div class="bg-gray-100 text-center py-4 px-4 shadow-inner">
+            <a href="donate.html" class="bg-white hover:bg-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-md shadow-md transition duration-300 border border-gray-300">
                 Donate Now
             </a>
         </div>
     </section>
 
-    <section class="py-12 sm:py-16 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-2xl sm:text-3xl font-bold text-blue-700 mb-8 text-center" data-aos="fade-up">Our Core Services</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section class="py-12 sm:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl sm:text-4xl font-bold text-blue-700 mb-12 text-center" data-aos="fade-up">Our Core Services</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <div class="service-card bg-white rounded-lg p-6 shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 text-center" data-aos="fade-up">
-                    <div class="bg-blue-100 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <img src="images/education.avif" alt="Education Icon" class="w-10 h-10 object-contain" loading="lazy">
+                <div class="bg-white rounded-lg p-6 border border-gray-200 shadow-sm hover:shadow-xl transition-shadow duration-300 text-center" data-aos="fade-up">
+                    <div class="bg-blue-50 w-20 h-20 rounded-full mx-auto mb-5 flex items-center justify-center">
+                        <img src="images/education.avif" alt="Education Icon" class="w-12 h-12 object-contain" loading="lazy">
                     </div>
-                    <h4 class="text-lg font-bold text-blue-700 mb-2">Education</h4>
-                    <p class="text-gray-600 text-sm">
+                    <h4 class="text-xl font-bold text-gray-900 mb-2">Education</h4>
+                    <p class="text-gray-600">
                         Providing quality education resources and support to uplift communities.
                     </p>
                 </div>
 
-                <div class="service-card bg-white rounded-lg p-6 shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-green-100 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <img src="images/welfare.png" alt="Welfare Icon" class="w-10 h-10 object-contain" loading="lazy">
+                <div class="bg-white rounded-lg p-6 border border-gray-200 shadow-sm hover:shadow-xl transition-shadow duration-300 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-green-50 w-20 h-20 rounded-full mx-auto mb-5 flex items-center justify-center">
+                        <img src="images/welfare.png" alt="Welfare Icon" class="w-12 h-12 object-contain" loading="lazy">
                     </div>
-                    <h4 class="text-lg font-bold text-green-700 mb-2">Welfare</h4>
-                    <p class="text-gray-600 text-sm">Medical help, food kits, and support to poor families.</p>
+                    <h4 class="text-xl font-bold text-gray-900 mb-2">Welfare</h4>
+                    <p class="text-gray-600">Medical help, food kits, and support to poor families.</p>
                 </div>
 
-                <div class="service-card bg-white rounded-lg p-6 shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-yellow-100 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <img src="images/employment.jpeg" alt="Employment Icon" class="w-10 h-10 object-contain" loading="lazy">
+                <div class="bg-white rounded-lg p-6 border border-gray-200 shadow-sm hover:shadow-xl transition-shadow duration-300 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-yellow-50 w-20 h-20 rounded-full mx-auto mb-5 flex items-center justify-center">
+                        <img src="images/employment.jpeg" alt="Employment Icon" class="w-12 h-12 object-contain" loading="lazy">
                     </div>
-                    <h4 class="text-lg font-bold text-yellow-700 mb-2">Employment</h4>
-                    <p class="text-gray-600 text-sm">Providing skills training and job placement support.</p>
+                    <h4 class="text-xl font-bold text-gray-900 mb-2">Employment</h4>
+                    <p class="text-gray-600">Providing skills training and job placement support.</p>
                 </div>
-
-                <div class="service-card bg-white rounded-lg p-6 shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-pink-100 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <img src="images/matrimony.png" alt="Matrimony Icon" class="w-10 h-10 object-contain" loading="lazy">
-                    </div>
-                    <h4 class="text-lg font-bold text-pink-700 mb-2">Matrimony</h4>
-                    <p class="text-gray-600 text-sm">Helping people find suitable life partners with dignity.</p>
+                
                 </div>
-
-                <div class="service-card bg-white rounded-lg p-6 shadow-sm hover:shadow-xl hover:scale-105 transform transition-all duration-300 text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div class="bg-purple-100 w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center">
-                        <img src="images/women.jpeg" alt="Women Empowerment Icon" class="w-10 h-10 object-contain" loading="lazy">
-                    </div>
-                    <h4 class="text-lg font-bold text-purple-700 mb-2">Women Empowerment</h4>
-                    <p class="text-gray-600 text-sm">Training and programs to help women become self-reliant.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-emerald-50 py-12 px-4 text-center">
-        <div class="max-w-2xl mx-auto" data-aos="fade-in">
-            <h3 class="text-2xl sm:text-3xl font-bold text-emerald-700 mb-3">Join Our Online Communities</h3>
-            <p class="text-gray-700 mb-6 text-base max-w-md mx-auto">
-                We have multiple WhatsApp groups, Telegram, and a YouTube channel dedicated to supporting you.
-            </p>
-            <a href="group.html" class="inline-block bg-green-600 text-white px-6 py-3 rounded-full font-semibold shadow-md transition hover:bg-green-700 hover:scale-105 transform">
-                Explore All Groups
-            </a>
-        </div>
-    </section>
-
-    <section class="bg-gradient-to-r from-blue-700 to-green-700 py-12 px-4 text-white text-center">
-        <div class="max-w-3xl mx-auto" data-aos="fade-in">
-            <h3 class="text-2xl sm:text-3xl font-bold mb-3">Get Involved with Us</h3>
-            <p class="mb-6 text-white/90 text-base">Whether you're looking to support, volunteer, or register for matrimony — we welcome you.</p>
-            <a href="register.html" class="inline-block bg-white text-blue-800 font-semibold px-6 py-3 rounded-full shadow-lg transition hover:scale-105 transform text-base">Explore Registration</a>
         </div>
     </section>
 </main>
@@ -182,7 +139,7 @@
 
         if (toggleButton && mobileMenu) {
             toggleButton.addEventListener('click', function(event) {
-                event.stopPropagation(); // Prevent click from bubbling up to document
+                event.stopPropagation();
                 mobileMenu.classList.toggle('active');
                 if (mobileMenu.classList.contains('active')) {
                     menuIcon.classList.remove('fa-bars');
@@ -193,7 +150,6 @@
                 }
             });
 
-            // Close menu when clicking outside
             document.addEventListener('click', function(event) {
                 const isClickInsideMenu = mobileMenu.contains(event.target);
                 const isClickOnToggleButton = toggleButton.contains(event.target);
@@ -210,13 +166,12 @@
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
 <script>
-    // Initialize AOS after page load
+    // Initialize AOS
     document.addEventListener('DOMContentLoaded', function() {
         AOS.init({
             duration: 800,
             offset: 100,
             once: true,
-            disable: 'mobile' // Optionally disable animations on mobile for performance
         });
     });
 </script>
