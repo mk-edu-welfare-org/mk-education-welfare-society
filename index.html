@@ -1,180 +1,573 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mustafa Kamaal Education & Welfare Society</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8" />
 
-    <style>
-        /* Smooth transition for mobile menu */
-        .mobile-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-        .mobile-menu.active {
-            max-height: 500px;
-        }
-        
-        body, html {
-            overflow-x: hidden;
-            width: 100%;
-        }
-    </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mustafa Kamaal Education & Welfare Society</title>
+
+ 
+
+  <!-- Tailwind CSS CDN -->
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+ 
+
+  <!-- AOS (Animate On Scroll) -->
+
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+ 
+
+  <style>
+
+    @keyframes fade-in {
+
+      from { opacity: 0; transform: translateY(20px); }
+
+      to   { opacity: 1; transform: translateY(0); }
+
+    }
+
+    .animate-fade-in {
+
+      animation: fade-in 0.8s ease-out forwards;
+
+    }
+
+    .delay-200 { animation-delay: 0.2s; }
+
+    .delay-400 { animation-delay: 0.4s; }
+
+   
+
+    /* Mobile menu toggle */
+
+    .mobile-menu {
+
+      max-height: 0;
+
+      overflow: hidden;
+
+      transition: max-height 0.3s ease-out;
+
+    }
+
+    .mobile-menu.active {
+
+      max-height: 500px;
+
+    }
+
+   
+
+    /* Responsive text sizing */
+
+    .responsive-heading {
+
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+
+    }
+
+   
+
+    .responsive-subheading {
+
+      font-size: clamp(1.1rem, 3vw, 1.8rem);
+
+    }
+
+   
+
+    .responsive-text {
+
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+
+    }
+
+   
+
+    /* Prevent horizontal overflow */
+
+    body, html {
+
+      overflow-x: hidden;
+
+      width: 100%;
+
+    }
+
+   
+
+    /* Service card hover effects for mobile */
+
+    @media (hover: none) {
+
+      .service-card:hover {
+
+        transform: none !important;
+
+      }
+
+    }
+
+   
+
+    /* Custom spacing for mobile */
+
+    @media (max-width: 640px) {
+
+      .mobile-px {
+
+        padding-left: 1rem;
+
+        padding-right: 1rem;
+
+      }
+
+      .mobile-py {
+
+        padding-top: 1.5rem;
+
+        padding-bottom: 1.5rem;
+
+      }
+
+    }
+
+  </style>
+
 </head>
-<body class="bg-white text-gray-800">
 
-<header id="header" class="bg-blue-700 text-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-        <div class="flex items-center space-x-4">
-            <img src="images/logo.jpg" class="w-12 h-12 rounded-full object-cover" alt="Society Logo">
-            <h1 class="text-lg font-bold">
-                M.K Education & Welfare Society
-            </h1>
-        </div>
+<body class="bg-gray-100 text-gray-800">
 
-        <button id="menu-toggle" class="md:hidden focus:outline-none p-2 text-xl">
-            <i class="fas fa-bars"></i>
-        </button>
+<!-- Mobile-Optimized Header -->
 
-        <nav class="hidden md:flex items-center space-x-2">
-            <a href="index.html" class="px-3 py-2 hover:bg-blue-600 rounded-md text-sm font-medium">Home</a>
-            <a href="register.html" class="px-3 py-2 hover:bg-blue-600 rounded-md text-sm font-medium">Register</a>
-            <a href="about.html" class="px-3 py-2 hover:bg-blue-600 rounded-md text-sm font-medium">About</a>
-            <a href="contact.html" class="px-3 py-2 hover:bg-blue-600 rounded-md text-sm font-medium">Contact</a>
-            <a href="group.html" class="px-3 py-2 hover:bg-blue-600 rounded-md text-sm font-medium">Groups</a>
-            <a href="donate.html" class="ml-4 bg-white text-blue-700 px-4 py-2 rounded-md font-bold text-sm hover:bg-gray-200 transition">Donate</a>
-        </nav>
-    </div>
-
-    <div id="mobile-menu" class="mobile-menu md:hidden">
-        <div class="flex flex-col px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="index.html" class="block py-2 px-3 hover:bg-blue-600 rounded text-base font-medium">Home</a>
-            <a href="register.html" class="block py-2 px-3 hover:bg-blue-600 rounded text-base font-medium">Register</a>
-            <a href="about.html" class="block py-2 px-3 hover:bg-blue-600 rounded text-base font-medium">About</a>
-            <a href="contact.html" class="block py-2 px-3 hover:bg-blue-600 rounded text-base font-medium">Contact</a>
-            <a href="group.html" class="block py-2 px-3 hover:bg-blue-600 rounded text-base font-medium">Groups</a>
-            <a href="donate.html" class="block mt-2 py-2 bg-white text-blue-700 font-bold px-3 rounded text-center text-base">Donate</a>
-        </div>
-    </div>
-</header>
-
-<main>
-    <section>
-        <div class="relative bg-gray-700 text-white text-center">
-             <img src="images/banner.jpeg" alt="Community Banner" class="absolute inset-0 w-full h-full object-cover opacity-30" loading="lazy" />
-             <div class="relative z-10 max-w-4xl mx-auto px-4 py-16 sm:py-20 lg:py-24">
-                <p class="text-sm sm:text-base text-gray-300">Reg. No. 03/27/01/24813</p>
-                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mt-2">
-                    Empowering Lives, Building Futures
-                </h2>
-                <p class="mt-4 text-base sm:text-lg text-gray-200">
-                    Join us to support Education, Welfare, Employment & Women Empowerment.
-                </p>
-             </div>
-        </div>
-        <div class="bg-gray-100 text-center py-4 px-4 shadow-inner">
-            <a href="donate.html" class="bg-white hover:bg-gray-200 text-gray-800 font-semibold px-6 py-3 rounded-md shadow-md transition duration-300 border border-gray-300">
-                Donate Now
-            </a>
-        </div>
-    </section>
-
-    <section class="py-12 sm:py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-3xl sm:text-4xl font-bold text-blue-700 mb-12 text-center" data-aos="fade-up">Our Core Services</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <div class="bg-white rounded-lg p-6 border border-gray-200 shadow-sm hover:shadow-xl transition-shadow duration-300 text-center" data-aos="fade-up">
-                    <div class="bg-blue-50 w-20 h-20 rounded-full mx-auto mb-5 flex items-center justify-center">
-                        <img src="images/education.avif" alt="Education Icon" class="w-12 h-12 object-contain" loading="lazy">
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-2">Education</h4>
-                    <p class="text-gray-600">
-                        Providing quality education resources and support to uplift communities.
-                    </p>
-                </div>
-
-                <div class="bg-white rounded-lg p-6 border border-gray-200 shadow-sm hover:shadow-xl transition-shadow duration-300 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-green-50 w-20 h-20 rounded-full mx-auto mb-5 flex items-center justify-center">
-                        <img src="images/welfare.png" alt="Welfare Icon" class="w-12 h-12 object-contain" loading="lazy">
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-2">Welfare</h4>
-                    <p class="text-gray-600">Medical help, food kits, and support to poor families.</p>
-                </div>
-
-                <div class="bg-white rounded-lg p-6 border border-gray-200 shadow-sm hover:shadow-xl transition-shadow duration-300 text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-yellow-50 w-20 h-20 rounded-full mx-auto mb-5 flex items-center justify-center">
-                        <img src="images/employment.jpeg" alt="Employment Icon" class="w-12 h-12 object-contain" loading="lazy">
-                    </div>
-                    <h4 class="text-xl font-bold text-gray-900 mb-2">Employment</h4>
-                    <p class="text-gray-600">Providing skills training and job placement support.</p>
-                </div>
-                
-                </div>
-        </div>
-    </section>
-</main>
-
-<footer id="footer" class="bg-gray-800 text-white py-8 px-4">
-    <div class="container mx-auto text-center">
-        <p class="text-sm">© 2025 Mustafa Kamaal Education & Welfare Society. All rights reserved.</p>
-        <div class="mt-4 text-xs text-gray-400 space-y-1">
-            <p>Juna Risala, Indore (M.P.) • Mob.: 9893081683, 6262940010</p>
-            <p>Email: mkph500@gmail.com • worldswomenwelfaresociety@gmail.com</p>
-        </div>
-    </div>
-</footer>
+<div id="header"></div>
 
 <script>
-    // Mobile Menu Logic
-    document.addEventListener('DOMContentLoaded', function() {
-        const toggleButton = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = toggleButton.querySelector('i');
 
-        if (toggleButton && mobileMenu) {
-            toggleButton.addEventListener('click', function(event) {
-                event.stopPropagation();
-                mobileMenu.classList.toggle('active');
-                if (mobileMenu.classList.contains('active')) {
-                    menuIcon.classList.remove('fa-bars');
-                    menuIcon.classList.add('fa-times');
-                } else {
-                    menuIcon.classList.remove('fa-times');
-                    menuIcon.classList.add('fa-bars');
-                }
-            });
+  function setupMobileMenu() {
 
-            document.addEventListener('click', function(event) {
-                const isClickInsideMenu = mobileMenu.contains(event.target);
-                const isClickOnToggleButton = toggleButton.contains(event.target);
+    const toggleButton = document.getElementById('menu-toggle');
 
-                if (mobileMenu.classList.contains('active') && !isClickInsideMenu && !isClickOnToggleButton) {
-                    mobileMenu.classList.remove('active');
-                    menuIcon.classList.remove('fa-times');
-                    menuIcon.classList.add('fa-bars');
-                }
-            });
-        }
-    });
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (toggleButton && mobileMenu) {
+
+      toggleButton.addEventListener('click', function() {
+
+        mobileMenu.classList.toggle('active');
+
+        // Change icon when menu is active
+
+        const icon = toggleButton.querySelector('i');
+
+        if (mobileMenu.classList.contains('active')) {
+
+          icon.classList.remove('fa-bars');
+
+          icon.classList.add('fa-times');
+
+        } else {
+
+          icon.classList.remove('fa-times');
+
+          icon.classList.add('fa-bars');
+
+        }
+
+      });
+
+     
+
+      // Close menu when clicking outside
+
+      document.addEventListener('click', function(event) {
+
+        if (!event.target.closest('#header') && mobileMenu.classList.contains('active')) {
+
+          mobileMenu.classList.remove('active');
+
+          const icon = toggleButton.querySelector('i');
+
+          icon.classList.remove('fa-times');
+
+          icon.classList.add('fa-bars');
+
+        }
+
+      });
+
+    }
+
+  }
+
+
+
+  fetch('header.html')
+
+    .then(res => {
+
+      if (!res.ok) throw new Error('Failed to load header');
+
+      return res.text();
+
+    })
+
+    .then(data => {
+
+      document.getElementById('header').innerHTML = data;
+
+      setupMobileMenu();
+
+    })
+
+    .catch(() => {
+
+      document.getElementById('header').innerHTML = `
+
+        <header class="bg-blue-700 text-white p-3 shadow-md sticky top-0 z-50">
+
+          <div class="container mx-auto flex justify-between items-center">
+
+            <div class="flex items-center max-w-[70%]">
+
+              <img src="images/logo.jpg" class="w-10 h-10 rounded-full mr-2 object-cover" alt="Logo">
+
+              <h1 class="text-sm font-bold leading-tight">Mustafa Kamaal Education & Welfare Society</h1>
+
+            </div>
+
+            <button id="menu-toggle" class="md:hidden focus:outline-none p-2">
+
+              <i class="fas fa-bars text-xl"></i>
+
+            </button>
+
+            <nav class="hidden md:flex items-center">
+
+              <a href="index.html" class="px-2 py-1 hover:text-blue-200 text-sm">Home</a>
+
+              <a href="about.html" class="px-2 py-1 hover:text-blue-200 text-sm">About</a>
+
+              <a href="contact.html" class="px-2 py-1 hover:text-blue-200 text-sm">Contact</a>
+
+              <a href="group.html" class="px-2 py-1 hover:text-blue-200 text-sm">Groups</a>
+
+              <a href="donate.html" class="ml-2 bg-white text-blue-700 px-3 py-1 rounded-full font-bold text-sm whitespace-nowrap">Donate</a>
+
+            </nav>
+
+          </div>
+
+          <!-- Mobile Menu -->
+
+          <div id="mobile-menu" class="mobile-menu md:hidden bg-blue-800">
+
+            <div class="flex flex-col p-3 space-y-1">
+
+              <a href="index.html" class="block py-2 hover:bg-blue-700 px-3 rounded text-sm">Home</a>
+
+              <a href="register.html" class="block py-2 hover:bg-blue-700 px-3 rounded text-sm">Register</a>
+
+              <a href="about.html" class="block py-2 hover:bg-blue-700 px-3 rounded text-sm">About</a>
+
+              <a href="activities.html" class="block py-2 hover:bg-blue-700 px-3 rounded text-sm">Activities</a>
+
+              <a href="gallery.html" class="block py-2 hover:bg-blue-700 px-3 rounded text-sm">Gallery</a>
+
+              <a href="contact.html" class="block py-2 hover:bg-blue-700 px-3 rounded text-sm">Contact</a>
+
+              <a href="group.html" class="block py-2 hover:bg-blue-700 px-3 rounded text-sm">Groups</a>
+
+              <a href="donate.html" class="block py-2 bg-white text-blue-700 font-bold px-3 rounded text-center text-sm mt-2">Donate</a>
+
+            </div>
+
+          </div>
+
+        </header>`;
+
+      setupMobileMenu();
+
+    });
+
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+
+
+<!-- Banner Section -->
+
+<section class="relative h-[50vh] md:h-[80vh]">
+
+  <img
+
+    src="images/banner.jpeg"
+
+    alt="Community Banner"
+
+    class="w-full h-full object-cover"
+
+    loading="lazy"
+
+  />
+
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+  <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4">
+
+    <h2 class="responsive-heading font-bold text-white drop-shadow-lg animate-fade-in mb-3">
+
+      Empowering Lives, Building Futures
+
+    </h2>
+
+    <p class="responsive-text text-gray-100 drop-shadow-md animate-fade-in delay-200 max-w-md mb-4">
+
+      Join us to support Education, Welfare, Employment & Women Empowerment
+
+    </p>
+
+    <a href="donate.html"
+
+       class="mt-2 bg-white/90 hover:bg-white text-emerald-700 font-semibold px-5 py-2 rounded-full shadow-md transition duration-300 text-sm md:text-base">
+
+       Donate Now
+
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- Services Section -->
+
+<section class="py-8 sm:py-12 bg-gray-50 px-4">
+
+  <div class="max-w-6xl mx-auto">
+
+    <h3 class="responsive-subheading font-bold text-blue-700 mb-6 text-center">Our Core Services</h3>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+
+     
+
+      <!-- Education -->
+
+      <div class="service-card bg-white rounded-lg p-4 sm:p-5 shadow-sm hover:shadow-md animate-fade-in text-center transition-all duration-300">
+
+        <div class="icon-container bg-blue-50 w-14 h-14 sm:w-16 sm:h-16 rounded-full mx-auto mb-3 flex items-center justify-center">
+
+          <img src="images/education.avif" alt="Education Support" class="w-8 h-8 sm:w-10 sm:h-10 object-contain" loading="lazy">
+
+        </div>
+
+        <h3 class="text-base sm:text-lg font-bold text-blue-700 mb-2">Education</h3>
+
+        <p class="text-gray-600 text-xs sm:text-sm">
+
+          Providing quality education resources and support to uplift communities.
+
+        </p>
+
+      </div>
+
+
+
+      <!-- Welfare -->
+
+      <div class="service-card bg-white rounded-lg p-4 sm:p-5 shadow-sm hover:shadow-md animate-fade-in delay-200 text-center transition-all duration-300">
+
+        <div class="icon-container bg-green-50 w-14 h-14 sm:w-16 sm:h-16 rounded-full mx-auto mb-3 flex items-center justify-center">
+
+          <img src="images/welfare.png" alt="Welfare Programs" class="w-8 h-8 sm:w-10 sm:h-10 object-contain" loading="lazy">
+
+        </div>
+
+        <h4 class="text-base sm:text-lg font-bold text-green-700 mb-2">Welfare</h4>
+
+        <p class="text-gray-600 text-xs sm:text-sm">Medical help, food kits and support to poor families.</p>
+
+      </div>
+
+
+
+      <!-- Employment -->
+
+      <div class="service-card bg-white rounded-lg p-4 sm:p-5 shadow-sm hover:shadow-md animate-fade-in delay-400 text-center transition-all duration-300">
+
+        <div class="icon-container bg-yellow-50 w-14 h-14 sm:w-16 sm:h-16 rounded-full mx-auto mb-3 flex items-center justify-center">
+
+          <img src="images/employment.jpeg" alt="Employment Support" class="w-8 h-8 sm:w-10 sm:h-10 object-contain" loading="lazy">
+
+        </div>
+
+        <h4 class="text-base sm:text-lg font-bold text-yellow-700 mb-2">Employment</h4>
+
+        <p class="text-gray-600 text-xs sm:text-sm">Providing skills training and job placement support.</p>
+
+      </div>
+
+
+
+      <!-- Matrimony -->
+
+      <div class="service-card bg-white rounded-lg p-4 sm:p-5 shadow-sm hover:shadow-md animate-fade-in text-center transition-all duration-300">
+
+        <div class="icon-container bg-pink-50 w-14 h-14 sm:w-16 sm:h-16 rounded-full mx-auto mb-3 flex items-center justify-center">
+
+          <img src="images/matrimony.png" alt="Matrimony Services" class="w-8 h-8 sm:w-10 sm:h-10 object-contain" loading="lazy">
+
+        </div>
+
+        <h4 class="text-base sm:text-lg font-bold text-pink-700 mb-2">Matrimony</h4>
+
+        <p class="text-gray-600 text-xs sm:text-sm">Helping people find suitable life partners with dignity.</p>
+
+      </div>
+
+
+
+      <!-- Women Empowerment -->
+
+      <div class="service-card bg-white rounded-lg p-4 sm:p-5 shadow-sm hover:shadow-md animate-fade-in delay-200 text-center transition-all duration-300">
+
+        <div class="icon-container bg-purple-50 w-14 h-14 sm:w-16 sm:h-16 rounded-full mx-auto mb-3 flex items-center justify-center">
+
+          <img src="images/women.jpeg" alt="Women Empowerment" class="w-8 h-8 sm:w-10 sm:h-10 object-contain" loading="lazy">
+
+        </div>
+
+        <h4 class="text-base sm:text-lg font-bold text-purple-700 mb-2">Women Empowerment</h4>
+
+        <p class="text-gray-600 text-xs sm:text-sm">Training and programs to help women become self-reliant.</p>
+
+      </div>
+
+     
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- Online Groups Section -->
+
+<section class="bg-emerald-50 py-8 px-4 text-center">
+
+  <h3 class="responsive-subheading font-bold text-emerald-700 mb-3">Join Our Online Communities</h3>
+
+  <p class="text-gray-700 mb-5 text-sm sm:text-base max-w-md mx-auto">
+
+    We have multiple WhatsApp groups, Telegram, and YouTube for your support.
+
+  </p>
+
+  <a href="group.html"
+
+     class="inline-block bg-green-600 text-white px-5 py-2 rounded-full font-semibold text-sm shadow-md transition hover:bg-green-700">
+
+    Explore All Groups
+
+  </a>
+
+</section>
+
+
+
+<!-- CTA Banner at Bottom -->
+
+<section class="bg-gradient-to-r from-blue-700 to-green-700 py-8 px-4 text-white text-center">
+
+  <h2 class="responsive-subheading font-bold mb-3">Get Involved with Mustafa Kamaal Education & Welfare Society</h2>
+
+  <p class="mb-4 text-white/90 text-sm sm:text-base">Whether you're looking to support, volunteer, or register for matrimony — we welcome you.</p>
+
+  <a href="register.html" class="inline-block bg-white text-blue-800 font-semibold px-5 py-2 rounded-full shadow-lg transition text-sm">Explore Registration</a>
+
+</section>
+
+
+
+<div id="footer"></div>
+
+
+
 <script>
-    // Initialize AOS
-    document.addEventListener('DOMContentLoaded', function() {
-        AOS.init({
-            duration: 800,
-            offset: 100,
-            once: true,
-        });
-    });
+
+  fetch('footer.html')
+
+    .then(response => response.text())
+
+    .then(data => {
+
+      document.getElementById('footer').innerHTML = data;
+
+    })
+
+    .catch(error => {
+
+      console.error('Failed to load footer:', error);
+
+      document.getElementById('footer').innerHTML = `
+
+        <footer class="bg-gray-800 text-white py-8 px-4">
+
+          <div class="container mx-auto text-center">
+
+            <p class="text-sm">© 2023 Mustafa Kamaal Education & Welfare Society. All rights reserved.</p>
+
+            <p class="text-xs mt-2 text-gray-400">Juan Ritala, Indore (M.P.) • Mob.: 9893081683, 6262940010</p>
+
+            <p class="text-xs text-gray-400">Email : mkph500@gmail.com • worldswomenweifaresociety@gmail.com</p>
+
+          </div>
+
+        </footer>`;
+
+    });
+
+</script>
+
+
+
+<!-- Scripts -->
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+  // Initialize AOS after page load
+
+  document.addEventListener('DOMContentLoaded', function() {
+
+    AOS.init({
+
+      duration: 800,
+
+      offset: 100,
+
+      once: true
+
+    });
+
+  });
+
 </script>
 
 </body>
+
 </html>
